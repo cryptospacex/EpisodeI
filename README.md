@@ -1,4 +1,4 @@
-# EpisodeI
+# Episode I
 
 A long time ago in a galaxy far far away….
 A young Jedi named Elon set aboard his millennium falcon to discover the mystical galaxy called
