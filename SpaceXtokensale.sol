@@ -22,7 +22,6 @@ library SafeMath {
 }
 
 
-
     /*
     ERC Token Standard #20 Interface
     */
@@ -86,13 +85,59 @@ contract Owned {
     }
 }
 
+/**
+ * @title Pausable
+ * @dev Base contract which allows children to implement an emergency stop mechanism.
+ */
+contract Pausable is Owned {
+  event Pause();
+  event Unpause();
+
+  bool public paused = false;
+
+
+  /**
+   * @dev Modifier to make a function callable only when the contract is not paused.
+   */
+  modifier whenNotPaused() {
+    require(!paused);
+    _;
+  }
+
+  /**
+   * @dev Modifier to make a function callable only when the contract is paused.
+   */
+  modifier whenPaused() {
+    require(paused);
+    _;
+  }
+
+  /**
+   * @dev called by the owner to pause, triggers stopped state
+   */
+  function pause() onlyOwner whenNotPaused public {
+    paused = true;
+    emit Pause();
+  }
+
+  /**
+   * @dev called by the owner to unpause, returns to normal state
+   */
+  function unpause() onlyOwner whenPaused public {
+    paused = false;
+    emit Unpause();
+  }
+}
+
+
+
 /*
 
 ERC20 Token, with the addition of symbol, name and decimals and an initial fixed supply
       
 */
       
-contract SpaceXToken is ERC20Interface, Owned {
+contract SpaceXToken is ERC20Interface, Owned, Pausable {
     using SafeMath for uint;
 
 
@@ -244,7 +289,7 @@ contract SpaceXToken is ERC20Interface, Owned {
      *  @dev Facilitates sale of presale tokens
      *  @param numberOfTokens number of tokens to be bought
      */
-    function TokenSale(uint256 numberOfTokens) public payable { // Facilitates sale of presale token
+    function TokenSale(uint256 numberOfTokens) public whenNotPaused payable { // Facilitates sale of presale token
         
         // All the required conditions for the sale of token
         
@@ -381,4 +426,3 @@ contract SpaceXToken is ERC20Interface, Owned {
         return this.balance;
     }
 }
-
