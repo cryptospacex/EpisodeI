@@ -1,24 +1,40 @@
-pragma solidity 0.4.18;
+pragma solidity ^0.4.23;
+
+import "./ERC721Basic.sol";
 
 
 /**
- * Interface for required functionality in the ERC721 standard
- * for non-fungible tokens.
- *
- * Author: Nadav Hollander (nadav at dharma.io)
+ * @title ERC-721 Non-Fungible Token Standard, optional enumeration extension
+ * @dev See https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
  */
-contract ERC721 {
-    // Function
-    function totalSupply() public view returns (uint256 _totalSupply);
-    function balanceOf(address _owner) public view returns (uint256 _balance);
-    function ownerOf(uint _tokenId) public view returns (address _owner);
-    function approve(address _to, uint _tokenId) public;
-    function getApproved(uint _tokenId) public view returns (address _approved);
-    function transferFrom(address _from, address _to, uint _tokenId) public;
-    function transfer(address _to, uint _tokenId) public;
-    function implementsERC721() public view returns (bool _implementsERC721);
+contract ERC721Enumerable is ERC721Basic {
+  function totalSupply() public view returns (uint256);
+  function tokenOfOwnerByIndex(
+    address _owner,
+    uint256 _index
+  )
+    public
+    view
+    returns (uint256 _tokenId);
 
-    // Events
-    event Transfer(address indexed _from, address indexed _to, uint256 _tokenId);
-    event Approval(address indexed _owner, address indexed _approved, uint256 _tokenId);
+  function tokenByIndex(uint256 _index) public view returns (uint256);
+}
+
+
+/**
+ * @title ERC-721 Non-Fungible Token Standard, optional metadata extension
+ * @dev See https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
+ */
+contract ERC721Metadata is ERC721Basic {
+  function name() public view returns (string _name);
+  function symbol() public view returns (string _symbol);
+  function tokenURI(uint256 _tokenId) public view returns (string);
+}
+
+
+/**
+ * @title ERC-721 Non-Fungible Token Standard, full implementation interface
+ * @dev See https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
+ */
+contract ERC721 is ERC721Basic, ERC721Enumerable, ERC721Metadata {
 }
