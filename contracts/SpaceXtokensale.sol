@@ -145,11 +145,11 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
     
     uint256 public totalRaised;           // Total ether raised (in wei)
     uint256 public startTimestamp;        // Timestamp after which ICO will start
-    uint256 public durationSeconds = 4 * 7 * 24 * 60 * 60; // 4 weeks
+    uint256 public endTimeStamp;          // Timestamp at which ICO will end
     uint256 public basePrice =  15000000000000000;              // All prices are in Wei
     uint256 public step1 =      80000000000000;
-    uint256 public step2 =      50000000000000;
-    uint256 public step3 =      500000000000000;
+    uint256 public step2 =      60000000000000;
+    uint256 public step3 =      40000000000000;
     uint256 public tokensSold;
     uint256 currentPrice;
     uint256 public totalPrice;
@@ -171,7 +171,8 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
 
     function SpaceXToken() public {
         tokensSold = 0;
-        startTimestamp = now;
+        startTimestamp = 1527043800;
+        endTimeStamp = 1527249600;
         fundsWallet = owner;
         name = "SpaceXToken";                                     // Set the name for display purposes (CHANGE THIS)
         decimals = 0;                                               // numberOfTokens of decimals for display purposes (CHANGE THIS)
@@ -294,12 +295,12 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
         // All the required conditions for the sale of token
         
         require(now >= startTimestamp , "Sale has not started yet.");
-        require(now <= (startTimestamp + durationSeconds), "Sale has ended.");
+        require(now <= endTimeStamp, "Sale has ended.");
         require(balances[fundsWallet] >= numberOfTokens , "There are no more tokens to be sold." );
         require(numberOfTokens >= 1 , "You must buy 1 or more tokens.");
         require(numberOfTokens <= 10 , "You must buy at most 10 tokens in a single purchase.");
         require(tokensSold.add(numberOfTokens) <= _totalSupply);
-        require(tokensSold<3800, "There are no more tokens to be sold.");
+        require(tokensSold<3700, "There are no more tokens to be sold.");
         
         // Price step function
         
@@ -309,14 +310,14 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
             
         }
         
-        if(tokensSold > 1000 && tokensSold <= 3500){
+        if(tokensSold > 1000 && tokensSold <= 3000){
             totalPrice = ((numberOfTokens) * (2*currentPrice + (numberOfTokens-1)*step2))/2;
         
             
         }
         
         
-        if(tokensSold > 3500){
+        if(tokensSold > 3000){
             totalPrice = ((numberOfTokens) * (2*currentPrice + (numberOfTokens-1)*step3))/2;
         
             
@@ -336,17 +337,18 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
             
         }
         
-        if(tokensSold > 1000 && tokensSold <= 3500){
+        if(tokensSold > 1000 && tokensSold <= 3000){
             currentPrice = basePrice + (step1 * 1000) + (step2 * (tokensSold-1000));
         
             
         }
         
-        if(tokensSold > 3500){
+        if(tokensSold > 3000){
             
-            currentPrice = basePrice + (step1 * 1000) + (step2 * 2500) + (step3 * (tokensSold-3500));
+            currentPrice = basePrice + (step1 * 1000) + (step2 * 2000) + (step3 * (tokensSold-3000));
           
         }
+        totalRaised = totalRaised + totalPrice;
         
         msg.sender.send(msg.value - totalPrice);            ////Transfer extra ether to wallet of the spender
         Transfer(fundsWallet, msg.sender, numberOfTokens); // Broadcast a message to the blockchain
@@ -375,15 +377,15 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
             
         }
         
-        if(tokensSold > 1000 && tokensSold <= 3500){
+        if(tokensSold > 1000 && tokensSold <= 3000){
             return basePrice + (step1 * 1000) + (step2 * (tokensSold-1000));
         
             
         }
         
-        if(tokensSold > 3500){
+        if(tokensSold > 3000){
             
-            return basePrice + (step1 * 1000) + (step2 * 2500) + (step3 * (tokensSold-3500));
+            return basePrice + (step1 * 1000) + (step2 * 2000) + (step3 * (tokensSold-3000));
           
         }
     }
