@@ -171,8 +171,8 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
 
     function SpaceXToken() public {
         tokensSold = 0;
-        startTimestamp = 1527043800;
-        endTimeStamp = 1527249600;
+        startTimestamp = 1527080400;
+        endTimeStamp = 1529672400;
         fundsWallet = owner;
         name = "SpaceXToken";                                     // Set the name for display purposes (CHANGE THIS)
         decimals = 0;                                               // numberOfTokens of decimals for display purposes (CHANGE THIS)
@@ -350,7 +350,7 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
         }
         totalRaised = totalRaised + totalPrice;
         
-        msg.sender.send(msg.value - totalPrice);            ////Transfer extra ether to wallet of the spender
+        msg.sender.transfer(msg.value - totalPrice);            ////Transfer extra ether to wallet of the spender
         Transfer(fundsWallet, msg.sender, numberOfTokens); // Broadcast a message to the blockchain
 
     }
@@ -413,8 +413,8 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
      * 
      */
      
-    function withdrawBalance(uint amount) onlyOwner returns(bool) {
-        require(amount <= this.balance);
+    function withdrawBalance(uint256 amount) onlyOwner returns(bool) {
+        require(amount <= address(this).balance);
         owner.transfer(amount);
         return true;
 
@@ -425,6 +425,6 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
      */
      
     function getBalanceContract() constant returns(uint){
-        return this.balance;
+        return address(this).balance;
     }
 }
