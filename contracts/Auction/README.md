@@ -32,7 +32,7 @@ Auction Contract Address: 0x6ae5b27e4423e4ac41c310f7168d1de284d4de1b
 
 Token Address : 0xc8ab480baac426840abdd5b527ee26796c259852
 
-Auction : 0x90454703868fcd67bed391a895c112516ec3f185
+Auction Contract Address: 0x90454703868fcd67bed391a895c112516ec3f185
 
 ## Volkator
 
