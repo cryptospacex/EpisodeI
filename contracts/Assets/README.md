@@ -104,7 +104,7 @@ Other players can buy various ships from market in the game.
 
 To level up, A starship has to satisfy certain conditions:-
 
-## Number of turrets in the starship should be greater than or equal to the number that is required for the next level. A ship can have a maximum of 30 turrets.
+Number of turrets in the starship should be greater than or equal to the number that is required for the next level. A ship can have a maximum of 30 turrets.
 
 For the ship to be upgraded to next level, the level of a certain number of turrets in the ship has to be greater than the current ship level. This number depends upon the current level of the ship.
 There is a certain amount of stardust that has to be paid to the upgrade the ship. Also, a certain amount of stardust has to be paid to level up the turret.
