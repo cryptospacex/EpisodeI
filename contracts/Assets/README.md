@@ -16,7 +16,7 @@ A planet is a mintable ERC721 token. It has the following features:-
 6. Stardust -> Stardust is the in-game currency. Every planet has some amount of stardust and its amount has to be maintained optimally. If you have a large amount of stardust, you will become a target for others. On the other hand if you have very low stardust, You won’t be able to buy new ships.
 7. Battlestation -> Battlestation is an important feature of a planet. Beside Starships, It is the only defence element of the planet. It has multiple turrets. The maximum number of turrets which can be there in the battlestation is capped by the level of planet. At the time of minting, the planet’s battlestation will be given 4 level 1 turrets.
 
-## HOW TO GET A PLANET
+## How to get a planet
 
 SpaceX Token holders will get 1 planet per token. They can find more planets by using Explorer rockets or can buy planets from the devs. SpaceX Token holders can also sell these planets. 
 For players who have missed our presale can buy planets either from the SpaceX token holders or from the devs. SpaceX token holders can choose planet’s price on the basis of demand, supply and level of the planets.
@@ -51,7 +51,7 @@ Hangar size of the planet increases. More ships can then be added in the hangar 
 
 
 
-# Star
+# STAR
 
 Stars generate stardust which is the in-game currency. There are only 1000 stars in the system and only these stars generate new stardust in the game ecosystem. Stars sell stardust to the planets associated with them. Each star has a operation time, i.e, the time for which they will generate stardust. Operation time for each star will be around the length of Episode 1. Stars have a stardust generation rate which remains almost constant till 70% of the operation time but then falls over the rest of time to zero. It means the star has decayed. 
 The entire fabula galaxy will be divided into cluster and each cluster will have 3 stars and 12 planets. Planets can buy stardust from only those stars that are present in their cluster.
@@ -67,14 +67,14 @@ A star is a mintable ERC721 token. It has the following features :-
 4. Rate :- Stardust is being generated in the star during its operation time, but at what Rate? In the game, the rate of stardust generation is a mathematical function of time.
 5. Vault :- The stardust generated is stored in the vault. Star owners can only sell the stardust that is in the vault. The generated stardust can be harnessed and added to the vault after a day’s interval.
 
-## HOW TO GET A STAR
+## How to get a star
 
 SpaceX Token holders will get 1 star per token. More stars can be bought at the star auction. Token holders can also sell stars to others.
 Other players can either buy stars from SpaceX Token holders or get them at the star auction.
 TRADING BETWEEN PLANETS AND STARS
 In a cluster, each star owner will quote a price for stardust and the associated planets will buy stardust from these stars. Buyer and seller will be anonymous to each other in this trade. For each transaction 20% will go to the devs. Stardust will be transferred from star’s vault to the planet.
 
-## ADVANTAGES OF OWNING A STAR
+## Advantage of owning a star
 
 Stars provide revenue to the star owners.
 Owners have control over the price. They can charge any price (between some range) for their stardust.
@@ -95,12 +95,12 @@ Speed :- Speed is an important trait of a ship. Quicker ships are difficult to t
 4. Defence Capabilities :- Defence is also an important characteristic of a ship. Even the best attacking ships are nothing if their defence is too weak.
 5. Battle Stardust :- It is the amount of stardust required by the ship for 1 battle. It increases with level and rarity.
 
-## HOW TO GET STARSHIPS ?
+## How to get a starship?
 
 SpaceX token holders will get 3 starships per token. These starships will be of level 1 but for rarity, there is a probability distribution. Token holder can get rarity 1 (common) ship with 80% probability, rarity 2 ship with 15% probability, rarity 3 ship with 4% probability and rarity 4 (very very rare) ship with 1% probability only. Ships are also available in the market.
 Other players can buy various ships from market in the game.
 
-## STARSHIP LEVEL UP CRITERIA
+## Level up criteria
 
 To level up, A starship has to satisfy certain conditions:-
 
