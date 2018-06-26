@@ -55,7 +55,7 @@ Hangar size of the planet increases. More ships can then be added in the hangar 
 
 Stars generate stardust which is the in-game currency. There are only 1000 stars in the system and only these stars generate new stardust in the game ecosystem. Stars sell stardust to the planets associated with them. Each star has a operation time, i.e, the time for which they will generate stardust. Operation time for each star will be around the length of Episode 1. Stars have a stardust generation rate which remains almost constant till 70% of the operation time but then falls over the rest of time to zero. It means the star has decayed. 
 The entire fabula galaxy will be divided into cluster and each cluster will have 3 stars and 12 planets. Planets can buy stardust from only those stars that are present in their cluster.
-At the beginning of the game, all the SpaceX token holders will get a star with some operation time. The remaining of the 1000 stars will be auctioned.
+At the beginning of the game, all the SpaceX token holders will have a 25% chance of getting a star. The remaining of the 1000 stars will be auctioned.
 
 ## Traits
 
